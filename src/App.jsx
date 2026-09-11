@@ -52,8 +52,6 @@ function App() {
 
   // const [scanningCard, setScanningCard] = useState(false);
 
-  const [cardJustScanned, setCardJustScanned] = useState(false);
-
   const [scanningCard, setScanningCard] = useState(false);
 
   const [cardScanMessage, setCardScanMessage] = useState("");

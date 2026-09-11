@@ -1410,6 +1410,10 @@ button {
    RESPONSIVE
 ===================================================== */
 
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
 @media (max-width: 1050px) {
   .sidebar {
     width: 220px;
@@ -1429,37 +1433,396 @@ button {
   .scanner-layout {
     grid-template-columns: 1fr;
   }
+
+  .scanner-main {
+    min-height: 560px;
+  }
+
+  .hero-orbit {
+    margin-right: 10px;
+  }
 }
 
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
 @media (max-width: 760px) {
+  body {
+    padding-bottom: 78px;
+  }
+
+  .shell {
+    display: block;
+    min-height: 100vh;
+  }
+
+  /* ------------------------------
+     MOBILE BOTTOM NAV
+  ------------------------------ */
+
   .sidebar {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    top: auto;
+
+    width: auto;
+    height: 64px;
+    min-height: 64px;
+
+    z-index: 100;
+
+    padding: 7px;
+
+    border-radius: 18px;
+
+    background: rgba(23, 35, 58, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+      0 16px 35px rgba(20, 30, 45, 0.24),
+      0 4px 12px rgba(20, 30, 45, 0.12);
+
+    backdrop-filter: blur(14px);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Hide desktop-only sidebar elements */
+
+  .brand,
+  .school-switch,
+  .sidebar-bottom {
     display: none;
   }
 
+  .nav {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 4px;
+  }
+
+  .nav-item {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 7px 5px;
+
+    border-radius: 13px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+
+    text-align: center;
+
+    font-size: 9px;
+    color: #9eabbd;
+  }
+
+  .nav-item > span {
+    width: auto;
+
+    font-size: 18px;
+    line-height: 1;
+
+    opacity: 1;
+  }
+
+  .nav-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .nav-dot {
+    position: absolute;
+    top: 8px;
+    right: 25%;
+    width: 6px;
+    height: 6px;
+  }
+
+  /* ------------------------------
+     TOPBAR
+  ------------------------------ */
+
   .topbar {
-    padding: 20px 16px;
+    min-height: auto;
+
+    padding: 16px;
+
+    gap: 12px;
+
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar h1 {
+    font-size: 21px;
+    margin-top: 5px;
+  }
+
+  .breadcrumb {
+    font-size: 9px;
   }
 
   .top-actions {
-    flex-direction: column;
-    align-items: flex-end;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 8px;
   }
+
+  .connection-pill {
+    height: 34px;
+
+    max-width: 100%;
+
+    padding: 0 10px;
+
+    font-size: 9px;
+  }
+
+  .primary-btn {
+    height: 36px;
+
+    padding: 0 12px;
+
+    font-size: 10px;
+  }
+
+  /* ------------------------------
+     MAIN CONTENT
+  ------------------------------ */
 
   .page-content {
-    padding: 20px 16px 40px;
+    padding: 16px 13px 35px;
   }
 
+  /* ------------------------------
+     DASHBOARD HERO
+  ------------------------------ */
+
   .hero-panel {
-    padding: 25px;
+    min-height: auto;
+
+    padding: 24px 21px;
+
+    border-radius: 20px;
+  }
+
+  .hero-panel h2 {
+    font-size: 23px;
+    line-height: 1.18;
+  }
+
+  .hero-panel p {
+    font-size: 11px;
+    line-height: 1.65;
   }
 
   .hero-orbit {
     display: none;
   }
 
+  /* ------------------------------
+     METRICS
+  ------------------------------ */
+
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+
+    margin-top: 10px;
+  }
+
+  .metric {
+    min-height: 112px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+  }
+
+  .metric strong {
+    margin-top: 9px;
+
+    font-size: 26px;
+  }
+
+  .metric-top small {
+    font-size: 9px;
+  }
+
+  .metric p {
+    font-size: 9px;
+  }
+
+  /* ------------------------------
+     DASHBOARD PANELS
+  ------------------------------ */
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 10px;
+  }
+
+  .panel {
+    padding: 16px;
+
+    border-radius: 16px;
+  }
+
+  .panel-heading {
+    margin-bottom: 13px;
+  }
+
+  .panel-heading h3 {
+    font-size: 15px;
+  }
+
+  .ghost-btn {
+    height: 32px;
+
+    padding: 0 9px;
+
+    font-size: 9px;
+  }
+
+  /* ------------------------------
+     PRESENCE ROW
+  ------------------------------ */
+
+  .presence-row {
+    grid-template-columns:
+      34px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 8px;
+
+    padding: 10px 0;
+  }
+
+  .row-time {
+    display: none;
+  }
+
+  .presence-name strong {
+    font-size: 11px;
+  }
+
+  .presence-name span {
+    font-size: 9px;
+  }
+
+  /* ------------------------------
+     SCANNER
+  ------------------------------ */
+
+  .scanner-layout {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .scanner-main {
+    min-height: 500px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+  }
+
+  .scanner-status {
+    font-size: 9px;
+  }
+
+  .scanner-visual {
+    height: 275px;
+  }
+
+  .ring-a {
+    width: 220px;
+    height: 220px;
+  }
+
+  .ring-b {
+    width: 175px;
+    height: 175px;
+  }
+
+  .ring-c {
+    width: 130px;
+    height: 130px;
+  }
+
+  .scan-card {
+    width: 132px;
+    height: 84px;
+  }
+
+  .scanner-copy h2 {
+    font-size: 22px;
+  }
+
+  .scanner-copy p {
+    font-size: 11px;
+  }
+
+  .scanner-side {
+    gap: 10px;
+  }
+
+  .side-card,
+  .how-card,
+  .alert-card {
+    padding: 16px;
+
+    border-radius: 16px;
+  }
+
+  /* ------------------------------
+     STUDENT REGISTRY
+  ------------------------------ */
+
   .student-hero {
-    align-items: flex-start;
+    min-height: auto;
+
+    padding: 22px;
+
+    border-radius: 18px;
+  }
+
+  .student-hero h2 {
+    font-size: 23px;
+  }
+
+  .student-hero p {
+    font-size: 11px;
   }
 
   .registry-stat {
@@ -1468,168 +1831,137 @@ button {
 
   .toolbar {
     flex-wrap: wrap;
+
+    gap: 7px;
   }
 
   .search-box {
     width: 100%;
     flex: 0 0 100%;
+
+    min-width: 0;
+  }
+
+  .toolbar select {
+    flex: 1;
+
+    min-width: 0;
+  }
+
+  /* ------------------------------
+     MODAL
+  ------------------------------ */
+
+  .modal-backdrop {
+    padding: 8px;
+
+    align-items: flex-end;
+  }
+
+  .modal {
+    width: 100%;
+
+    max-height: calc(100vh - 16px);
+
+    border-radius: 21px 21px 12px 12px;
+  }
+
+  .modal-header {
+    padding: 21px 19px 17px;
+  }
+
+  .student-form {
+    padding: 18px 19px;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .modal-backdrop {
-    padding: 10px;
-  }
-
-  .modal {
-    max-height: calc(100vh - 20px);
-  }
-}
-/* =====================================================
-   NFC CARD ASSIGNMENT
-===================================================== */
-
-.nfc-assignment {
-  display: flex;
-  gap: 9px;
-  align-items: stretch;
-}
-
-.nfc-uid-box {
-  flex: 1;
-  min-width: 0;
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  padding: 0 13px;
-  border: 1px solid #dfe4e8;
-  background: #fafbfc;
-  border-radius: 12px;
-}
-
-.nfc-uid-box.has-card {
-  background: #f3f8f5;
-  border-color: #d8e8dd;
-}
-
-.nfc-symbol {
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
-  display: grid;
-  place-items: center;
-  border-radius: 9px;
-  background: #edf0f3;
-  color: #5e6978;
-  font-size: 17px;
-}
-
-.nfc-uid-box.has-card .nfc-symbol {
-  background: #e2f1e7;
-  color: #28784f;
-}
-
-.nfc-uid-content {
-  min-width: 0;
-}
-
-.nfc-label {
-  display: block;
-  color: #949ba5;
-  font-size: 9px;
-}
-
-.nfc-uid-content strong {
-  display: block;
-  margin-top: 3px;
-  color: #4d5969;
-  font-family: monospace;
-  font-size: 12px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.nfc-confirmed {
-  margin-left: auto;
-  color: #2b7a51;
-  font-size: 9px;
-  font-weight: 800;
-  white-space: nowrap;
-}
-
-.scan-card-btn {
-  min-width: 155px;
-  border: 1px solid #dfe4e8;
-  background: #17233a;
-  color: #fff;
-  border-radius: 11px;
-  padding: 0 14px;
-  cursor: pointer;
-  font-size: 10px;
-  font-weight: 700;
-  transition: 0.18s ease;
-}
-
-.scan-card-btn:hover {
-  background: #24324e;
-  transform: translateY(-1px);
-}
-
-.scan-card-btn:disabled {
-  cursor: default;
-  transform: none;
-  opacity: 0.78;
-}
-
-.scan-card-btn.scanning {
-  background: #596879;
-}
-
-.scan-button-icon {
-  margin-right: 7px;
-  font-size: 15px;
-}
-
-.scan-live-message,
-.scan-success-message {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 9px;
-  padding: 9px 11px;
-  border-radius: 9px;
-  font-size: 10px;
-}
-
-.scan-live-message {
-  background: #f2f5f8;
-  color: #687586;
-}
-
-.scan-success-message {
-  background: #eaf6ee;
-  color: #28764e;
-}
-
-.scan-live-dot {
-  width: 7px;
-  height: 7px;
-  flex: 0 0 7px;
-  border-radius: 50%;
-  background: #5ea779;
-  box-shadow: 0 0 0 5px rgba(94, 167, 121, 0.1);
-}
-
-@media (max-width: 650px) {
   .nfc-assignment {
     flex-direction: column;
   }
 
   .scan-card-btn {
-    min-height: 42px;
+    width: 100%;
+
+    min-height: 43px;
+  }
+
+  .nfc-confirmed {
+    font-size: 8px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 420px) {
+  .topbar {
+    padding: 14px 12px;
+  }
+
+  .topbar h1 {
+    font-size: 19px;
+  }
+
+  .page-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+  }
+
+  .metric {
+    padding: 12px;
+  }
+
+  .metric strong {
+    font-size: 23px;
+  }
+
+  .metric-top small {
+    font-size: 8px;
+  }
+
+  .hero-panel {
+    padding: 20px 18px;
+  }
+
+  .hero-panel h2 {
+    font-size: 21px;
+  }
+
+  .scanner-main {
+    min-height: 455px;
+  }
+
+  .scanner-visual {
+    height: 240px;
+  }
+
+  .ring-a {
+    width: 195px;
+    height: 195px;
+  }
+
+  .ring-b {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ring-c {
+    width: 112px;
+    height: 112px;
+  }
+
+  .scan-card {
+    width: 120px;
+    height: 76px;
   }
 }
